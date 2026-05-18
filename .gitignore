@@ -1,0 +1,52 @@
+# .gitignore for Java AI Learning Project
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/
+out/
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+
+# Maven / Gradle
+.mvn/
+mvnw
+mvnw.cmd
+gradle.properties
+
+# Application config (contains API keys)
+application.yml
+application.properties
+.env
+*.env
+
+# Keep template files
+!application-template.yml
+!application-template.properties
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Node (if any frontend tools)
+node_modules/
+dist/
+
+# Temporary files
+*.tmp
+*.temp
