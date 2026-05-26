@@ -119,7 +119,7 @@
 
 ## 🏃 当前进度
 
-**正在执行**：Phase 1 - Day 1  
+**正在执行**：Phase 1 - Day 2  
 **下一个里程碑**：跑通第一个 Spring AI ChatClient
 
 ---
