@@ -31,11 +31,17 @@ public class PromptDemo {
         "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
     private static final String MODEL = "qwen-plus";
 
-    // ---- 1. Zero-shot ----
+    // ---- 1. Zero-shot (with system message & parameters) ----
     private static String buildZeroShotBody() {
         return "{"
             + "  \"model\": \"" + MODEL + "\","
+            + "  \"temperature\": 0.1,"
+            + "  \"max_tokens\": 50,"
             + "  \"messages\": ["
+            + "    {"
+            + "      \"role\": \"system\","
+            + "      \"content\": \"You are a primary school student.\""
+            + "    },"
             + "    {"
             + "      \"role\": \"user\","
             + "      \"content\": \"Explain the JVM memory model, including heap, stack, method area, and their relationships.\""
