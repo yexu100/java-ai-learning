@@ -48,6 +48,11 @@
   </div>
   <div class="messages" id="messages"></div>
   <div class="input-area">
+      <select id="roleSelect" style="height:44px;border:1px solid #ddd;border-radius:8px;padding:0 8px;font-size:13px;outline:none;">
+          <option value="default">普通助手</option>
+          <option value="comedian">脱口秀演员</option>
+          <option value="interviewer">面试官</option>
+          <option value="kid">小学生</option>
     <textarea id="input" rows="1" placeholder="输入消息..." onkeydown="onKeyDown(event)" oninput="autoResize(this)"></textarea>
     <button id="sendBtn" onclick="send()" disabled>
       <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -139,7 +144,8 @@ async function send() {
   let fullText = '';
 
   try {
-    const url = `/api/chat?msg=${encodeURIComponent(msg)}&sessionId=${encodeURIComponent(sessionId)}`;
+    const role = document.getElementById('roleSelect').value;
+    const url = `/api/chat?msg=${encodeURIComponent(msg)}&sessionId=${encodeURIComponent(sessionId)}&role=${encodeURIComponent(role)}`;
     const eventSource = new EventSource(url);
 
     eventSource.onmessage = function(e) {
